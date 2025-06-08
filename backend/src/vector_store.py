@@ -47,7 +47,7 @@ def load_or_create_vector_store():
             embedding=embeddings,
             persist_directory=persist_dir
         )
-        vectordb.persist()
+        # vectordb.persist()
 
     return vectordb
 
