@@ -1,6 +1,8 @@
 fastapi
 uvicorn[standard]
 python-dotenv
-langchain
-chromadb
 openai
+langchain
+langchain-community
+langchain-chroma
+chromadb
