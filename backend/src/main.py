@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from src.rag_pipeline import bot
+from src.rag_pipeline import load_bot
 
 app = FastAPI()
 
@@ -19,7 +19,8 @@ class ChatRequest(BaseModel):
 
 @app.post("/chat")
 def chat(req: ChatRequest):
-    reply = bot(req.message)
+    chain = load_bot()
+    reply = chain.run(req.message)
     return {"response": reply}
 
 @app.get("/")
