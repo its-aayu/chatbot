@@ -20,7 +20,7 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 def chat(req: ChatRequest):
     chain = load_bot()
-    reply = chain.run(req.message)
+    reply = chain(req.message)
     return {"response": reply}
 
 @app.get("/")
