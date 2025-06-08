@@ -5,4 +5,5 @@ openai
 langchain
 langchain-community
 langchain-chroma
+langchain-huggingface
 chromadb
